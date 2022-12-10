@@ -1,14 +1,22 @@
 spring:
   application:
-    name: ${artifactId}
+    name: ${AppName}
+  output:
+    ansi:
+      enabled: always
 
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.xml
+    url: jdbc:mysql://localhost:3306/${AppName}?useSSL=false
+    username: username
+    password: password
+    enabled: false
   # Database
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432
-    #url: jdvc:postgresql://ip:port/lala
-    username: postgres
-    password: superUser
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:5432/${AppName}?useSSL=false
+    username: username
+    password: password
   # JPA properties
   jpa:
     hibernate:
@@ -21,4 +29,4 @@ server:
 
 logging:
   lever:
-    com.d3: 'DEBUG'
+    com.depp3: 'DEBUG'
