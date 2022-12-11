@@ -31,10 +31,13 @@ spring:
     hibernate:
       ddl-auto: none
     show-sql: false
-    database: postgresql
+    database: MySQL
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    #database-platform: org.hibernate.dialect.H2Dialect
+
 
 server:
-  port: 8000
+  port: ${port}
 
 logging:
   lever:
