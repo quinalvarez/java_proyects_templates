@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+#      id: add comment for script
+      author: depp3
+      changes:
+        - sqlFile:
+            dbms: 'mysql'
+            endDelimiter: ;
+            splitStatements: true
+            path: db/changelog/00-initial_script.sql
+            stripComments: true
